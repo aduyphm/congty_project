@@ -1,1 +1,0 @@
-# congty_project
