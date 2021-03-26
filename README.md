@@ -6,6 +6,9 @@ Let's see how we do those things.
 
 # Instruction for settings
 - Localhost: 
+Set up all those files on the paths below: 
+Ubuntu: /opt/lampp/htdocs
+Window: C:/xampp/htdocs/....
 - Phpmyadmin: 
 Create a database called image_matting
 In this database create 2 different tables: result and upload.
