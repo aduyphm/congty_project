@@ -44,7 +44,7 @@ body {
 .text-here {
 	text-align: center;
 	color: red;
-	margin: 20px 20px;
+	margin: 60px 20px;
 	<!-- border: 1px solid black; -->
 }
 .background-area img:hover {
