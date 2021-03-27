@@ -1,4 +1,6 @@
 <?php
+// if using database, first thing to keep in mind is connect to database. 
+// here we simply try to connect to database use some mysql func
 $dbServername = "localhost";
 $username = "root";
 $password = "";

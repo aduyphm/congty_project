@@ -1,16 +1,15 @@
 <?php 
+// dont need to connect to database. This is optional
 include_once 'connection.php';
 $image_result_sql = 'select * from upload order by id desc limit 1';
 $image_result = mysqli_query($conn, $image_result_sql);
 $row = $image_result->fetch_assoc();
-// echo $row['links'];
 $message = "";
 
-// upload.php
+// whenever click submit, this php code will work.
 if (isset($_POST['submit'])) {
-	$target_dir = "uploads/";
+$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
-// echo $target_file;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -62,7 +61,7 @@ if ($uploadOk == 0) {
   }
 }
 }
-
+	// final url for image uploaded and background selected.
 	$image_source_result = "result/unnamed.jpg";
 	$image_background_result = "";
 ?>
@@ -75,6 +74,7 @@ if ($uploadOk == 0) {
 	<link rel="stylesheet" type="text/css" href="form_css.php">
 </head>
 <body>
+	<!-- upload form for uploading image -->
 	<div class = "form_to_upload">
 		<form action = '' method="post" enctype="multipart/form-data">
 
@@ -83,12 +83,14 @@ if ($uploadOk == 0) {
 			<input type="submit" name = 'submit'>
 		</form>
 	</div>
+	<!-- First display image for visualizing -->
 	<div class="post_review">
 		<p style="text-align: center;"><?php if(isset($_POST['submit'])) {
 			echo $message;
 		} ?></p>
 		<img id="output" width="200">
 	</div>
+	<!-- background selecting -->
 	<div class="background-area">
 		<div class="text-here">
 			<h1>Select your background: </h1>
@@ -102,9 +104,7 @@ if ($uploadOk == 0) {
 		</div>
 	</div>_
 	<div class="submit_for_rendering">
-<!-- 		<form action="" name = 'submit2' method = "post"> -->
 			<button type="submit2" name = "submit2" onclick="renderFile()">Submit for final result</button>
-		<!-- </form> -->
 	</div>
 	<div class="rendering">
 		<h1>Result: </h1>

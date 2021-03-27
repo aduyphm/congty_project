@@ -1,4 +1,5 @@
 <?php
+// dont need this file. just optional
 include_once 'connection.php';
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
